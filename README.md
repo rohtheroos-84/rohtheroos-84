@@ -5,7 +5,7 @@ currently working on **shhhh...**
 
 reach me at **rohit84.official@gmail.com**
 
-b4 hiring me, check out my [resume](https://drive.google.com/file/d/1Dx4I5_72UhRMmunErVoBwsWD6ajbCHmY/view?usp=drive_link)
+wanna hire me? -> [resume](https://drive.google.com/file/d/1Dx4I5_72UhRMmunErVoBwsWD6ajbCHmY/view?usp=drive_link)
 
 <br>
 
