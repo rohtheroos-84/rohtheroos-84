@@ -1,5 +1,5 @@
 <h1 align="center">me, rohit</h1>
-<h3 align="center">i dont code, sometimes</h3><br>
+<h3 align="center">sometimes, i dont code</h3><br>
 
 currently working on **shhhh...**
 
