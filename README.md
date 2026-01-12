@@ -85,8 +85,4 @@ wanna hire me? -> [resume](https://drive.google.com/file/d/1Dx4I5_72UhRMmunErVoB
 <h3 align="left">stats:</h3>
 <br>
 
-![](https://github-readme-stats.vercel.app/api/top-langs?username=rohtheroos-84&theme=shadow_green&show_icons=true&locale=en&layout=compact)<br/>
-
-![](https://github-readme-stats.vercel.app/api?username=rohtheroos-84&theme=shadow_green&hide_border=false&include_all_commits=true&count_private=true)<br/>
-
 ![](https://nirzak-streak-stats.vercel.app/?user=rohtheroos-84&theme=shadow_green&hide_border=false)<br/>
