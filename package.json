@@ -1,0 +1,11 @@
+{
+  "name": "github-stats",
+  "version": "1.0.0",
+  "description": "Custom GitHub profile stats widgets",
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "node-fetch": "^2.7.0"
+  }
+}
