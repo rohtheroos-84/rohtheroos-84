@@ -97,7 +97,7 @@ wanna hire me? -> [resume](https://drive.google.com/file/d/1ZY4yrm6AJjem6NYgpw1R
 
 <br>
 
-<h3 align="left">recent activity:</h3>
+<!-- <h3 align="left">recent activity:</h3>
 <p align="center">
   <img src="https://profile-readme-kappa.vercel.app/api/activity?username=rohtheroos-84" alt="Recent Activity"/>
-</p>
+</p> -->
