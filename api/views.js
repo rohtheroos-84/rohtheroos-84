@@ -1,12 +1,13 @@
 const fetch = require('node-fetch');
 
-// Using hits.dwyl.com for persistent view counting (free & reliable)
+// Using counterapi.dev - free, reliable, counts every hit
 module.exports = async (req, res) => {
   const { username = 'rohtheroos-84' } = req.query;
+  const namespace = 'github-profile-views';
   
   try {
-    // Use hits.dwyl.com API to get count
-    const countRes = await fetch(`https://hits.dwyl.com/${username}/${username}.json`);
+    // Increment and get count from counterapi.dev
+    const countRes = await fetch(`https://api.counterapi.dev/v1/${namespace}/${username}/up`);
     const countData = await countRes.json();
     const views = countData.count || 0;
 
@@ -35,10 +36,9 @@ module.exports = async (req, res) => {
 </svg>`;
 
     res.setHeader('Content-Type', 'image/svg+xml');
-    res.setHeader('Cache-Control', 's-maxage=1, stale-while-revalidate');
+    res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
     res.status(200).send(svg);
   } catch (error) {
-    // Fallback - still show a working counter using the badge directly
     const svg = `
 <svg width="200" height="120" xmlns="http://www.w3.org/2000/svg">
   <rect width="200" height="120" rx="10" fill="#0d1117" stroke="#238636" stroke-width="2"/>
