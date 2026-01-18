@@ -2,7 +2,7 @@
 <h3 align="center">sometimes, i dont code</h3><br>
 
 <p align="center">
-  <img src="https://your-vercel-app.vercel.app/api/views?username=rohtheroos-84" alt="Profile Views"/>
+  <img src="https://profile-readme-kappa.vercel.app/api/views?username=rohtheroos-84" alt="Profile Views"/>
 </p>
 
 currently working on **shhhh...**
@@ -91,13 +91,13 @@ wanna hire me? -> [resume](https://drive.google.com/file/d/1ZY4yrm6AJjem6NYgpw1R
 
 <p align="center">
   <img src="https://nirzak-streak-stats.vercel.app/?user=rohtheroos-84&theme=shadow_green&hide_border=false" alt="Streak Stats"/><br/><br/>
-  <img src="https://your-vercel-app.vercel.app/api/heatmap?username=rohtheroos-84" alt="Commits Heatmap"/>
-  <img src="https://your-vercel-app.vercel.app/api/milestone?username=rohtheroos-84" alt="Contribution Milestone"/>
+  <img src="https://profile-readme-kappa.vercel.app/api/heatmap?username=rohtheroos-84" alt="Commits Heatmap"/>
+  <img src="https://profile-readme-kappa.vercel.app/api/milestone?username=rohtheroos-84" alt="Contribution Milestone"/>
 </p>
 
 <br>
 
 <h3 align="left">recent activity:</h3>
 <p align="center">
-  <img src="https://your-vercel-app.vercel.app/api/activity?username=rohtheroos-84" alt="Recent Activity"/>
+  <img src="https://profile-readme-kappa.vercel.app/api/activity?username=rohtheroos-84" alt="Recent Activity"/>
 </p>
