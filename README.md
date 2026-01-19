@@ -93,6 +93,9 @@ wanna hire me? -> [resume](https://drive.google.com/file/d/1ZY4yrm6AJjem6NYgpw1R
   <img src="https://nirzak-streak-stats.vercel.app/?user=rohtheroos-84&theme=shadow_green&hide_border=false" alt="Streak Stats"/><br/><br/>
   <img src="https://profile-readme-kappa.vercel.app/api/heatmap?username=rohtheroos-84" alt="Commits Heatmap"/>
   <img src="https://profile-readme-kappa.vercel.app/api/milestone?username=rohtheroos-84" alt="Contribution Milestone"/>
+  <p align="center">
+  <img src="https://profile-readme-kappa.vercel.app/api/dna?username=rohtheroos-84" alt="Code DNA"/>
+  </p>
 </p>
 
 <br>
