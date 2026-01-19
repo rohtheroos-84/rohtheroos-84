@@ -128,7 +128,7 @@ module.exports = async (req, res) => {
   </g>
   
   <!-- Subtitle -->
-  <text x="${width / 2}" y="${height - 10}" fill="#8b949e" font-family="Segoe UI, Ubuntu, sans-serif" font-size="9" text-anchor="middle">Unique fingerprint based on your repos</text>
+  <text x="${width / 2}" y="${height - 10}" fill="#8b949e" font-family="Segoe UI, Ubuntu, sans-serif" font-size="9" text-anchor="middle">unique fingerprint</text>
 </svg>`;
 
   res.status(200).send(svg);
