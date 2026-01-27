@@ -44,7 +44,6 @@ wanna hire me? -> [resume](https://drive.google.com/file/d/1ZY4yrm6AJjem6NYgpw1R
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" width="40"/>
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" width="40"/>
   <img src="https://cdn.worldvectorlogo.com/logos/django.svg" width="40"/>
-  <img src="https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-icon.svg" width="40"/>
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" width="40"/>
   <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" width="40"/>
 </p>
@@ -80,7 +79,6 @@ wanna hire me? -> [resume](https://drive.google.com/file/d/1ZY4yrm6AJjem6NYgpw1R
   <img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" width="40"/>
   <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" width="40"/>
   <img src="https://www.chartjs.org/media/logo-title.svg" width="40"/>
-  <img src="https://raw.githubusercontent.com/detain/svg-logos/master/svg/selenium-logo.svg" width="40"/>
 </p>
 
 
@@ -99,8 +97,3 @@ wanna hire me? -> [resume](https://drive.google.com/file/d/1ZY4yrm6AJjem6NYgpw1R
 </p>
 
 <br>
-
-<!-- <h3 align="left">recent activity:</h3>
-<p align="center">
-  <img src="https://profile-readme-kappa.vercel.app/api/activity?username=rohtheroos-84" alt="Recent Activity"/>
-</p> -->
