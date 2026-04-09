@@ -145,18 +145,18 @@ function renderCard(username, stats, hideBorder) {
   <line x1="333.33" y1="24" x2="333.33" y2="171" stroke="#263242" stroke-width="1"/>
 
   <text x="83.33" y="80" fill="#9bdcb0" font-family="Segoe UI, Ubuntu, sans-serif" font-size="42" font-weight="700" text-anchor="middle">${stats.total.toLocaleString()}</text>
-  <text x="83.33" y="116" fill="#c9d1d9" font-family="Segoe UI, Ubuntu, sans-serif" font-size="28" text-anchor="middle">Total Contributions</text>
-  <text x="83.33" y="147" fill="#39d353" font-family="Segoe UI, Ubuntu, sans-serif" font-size="22" text-anchor="middle">${totalRange}</text>
+  <text x="83.33" y="116" fill="#c9d1d9" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Total Contributions</text>
+  <text x="83.33" y="147" fill="#39d353" font-family="Segoe UI, Ubuntu, sans-serif" font-size="10" text-anchor="middle">${totalRange}</text>
 
   <circle cx="250" cy="69" r="40" fill="none" stroke="#39d353" stroke-width="6" filter="url(#softShadow)"/>
   <path d="M250 17 C245 24, 244 28, 246 33 C248 37, 253 39, 257 36 C261 33, 262 27, 259 23 C257 20, 254 18, 250 17 Z" fill="#39d353"/>
   <text x="250" y="80" fill="#b6f2c5" font-family="Segoe UI, Ubuntu, sans-serif" font-size="44" font-weight="700" text-anchor="middle">${stats.currentStreak}</text>
-  <text x="250" y="140" fill="#c9d1d9" font-family="Segoe UI, Ubuntu, sans-serif" font-size="30" font-weight="600" text-anchor="middle">Current Streak</text>
-  <text x="250" y="167" fill="#39d353" font-family="Segoe UI, Ubuntu, sans-serif" font-size="22" text-anchor="middle">${currentRange}</text>
+  <text x="250" y="140" fill="#c9d1d9" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Current Streak</text>
+  <text x="250" y="167" fill="#39d353" font-family="Segoe UI, Ubuntu, sans-serif" font-size="10" text-anchor="middle">${currentRange}</text>
 
   <text x="416.67" y="80" fill="#9bdcb0" font-family="Segoe UI, Ubuntu, sans-serif" font-size="42" font-weight="700" text-anchor="middle">${stats.longestStreak.toLocaleString()}</text>
-  <text x="416.67" y="116" fill="#c9d1d9" font-family="Segoe UI, Ubuntu, sans-serif" font-size="28" text-anchor="middle">Longest Streak</text>
-  <text x="416.67" y="147" fill="#39d353" font-family="Segoe UI, Ubuntu, sans-serif" font-size="22" text-anchor="middle">${longestRange}</text>
+  <text x="416.67" y="116" fill="#c9d1d9" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Longest Streak</text>
+  <text x="416.67" y="147" fill="#39d353" font-family="Segoe UI, Ubuntu, sans-serif" font-size="10" text-anchor="middle">${longestRange}</text>
 </svg>`;
 }
 
