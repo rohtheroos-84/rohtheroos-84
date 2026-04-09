@@ -23,42 +23,34 @@ module.exports = async (req, res) => {
     const progress = ((total - prevMilestone) / (nextMilestone - prevMilestone)) * 100;
     const progressWidth = Math.min(progress, 100) * 2.2; // Scale to 220px max
     
-    // Trophy icon based on milestone
-    let trophy = '🎯';
-    if (total >= 5000) trophy = '🏆';
-    else if (total >= 2500) trophy = '🥇';
-    else if (total >= 1000) trophy = '🥈';
-    else if (total >= 500) trophy = '🥉';
-    else if (total >= 250) trophy = '🎖️';
-    
     const svg = `
 <svg width="280" height="130" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="progressGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#238636" />
-      <stop offset="100%" style="stop-color:#39d353" />
+      <stop offset="0%" stop-color="#16c43e" />
+      <stop offset="100%" stop-color="#22e55f" />
     </linearGradient>
   </defs>
   
-  <rect width="280" height="130" rx="10" fill="#0d1117" stroke="#238636" stroke-width="2"/>
+  <rect width="280" height="130" rx="10" fill="#000000" stroke="#00d84a" stroke-width="1.5"/>
   
   <!-- Title -->
-  <text x="140" y="25" fill="#c9d1d9" font-family="Segoe UI, Ubuntu, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">${trophy} Contribution Milestone</text>
+  <text x="140" y="25" fill="#e5e7eb" font-family="Segoe UI, Ubuntu, sans-serif" font-size="13" font-weight="700" text-anchor="middle">🏅 Contribution Milestone</text>
   
   <!-- Current count -->
-  <text x="140" y="55" fill="#238636" font-family="Segoe UI, Ubuntu, sans-serif" font-size="24" font-weight="bold" text-anchor="middle">${total.toLocaleString()}</text>
-  <text x="140" y="70" fill="#8b949e" font-family="Segoe UI, Ubuntu, sans-serif" font-size="10" text-anchor="middle">total contributions</text>
+  <text x="140" y="55" fill="#22e55f" font-family="Segoe UI, Ubuntu, sans-serif" font-size="40" font-weight="700" text-anchor="middle">${total.toLocaleString()}</text>
+  <text x="140" y="72" fill="#9ca3af" font-family="Segoe UI, Ubuntu, sans-serif" font-size="10" text-anchor="middle">total contributions</text>
   
   <!-- Progress bar background -->
-  <rect x="25" y="85" width="230" height="12" rx="6" fill="#161b22"/>
+  <rect x="25" y="88" width="230" height="12" rx="6" fill="#111827"/>
   
   <!-- Progress bar fill -->
-  <rect x="25" y="85" width="${progressWidth}" height="12" rx="6" fill="url(#progressGrad)"/>
+  <rect x="25" y="88" width="${progressWidth}" height="12" rx="6" fill="url(#progressGrad)"/>
   
   <!-- Milestone labels -->
-  <text x="25" y="115" fill="#8b949e" font-family="Segoe UI, Ubuntu, sans-serif" font-size="10">${prevMilestone.toLocaleString()}</text>
-  <text x="255" y="115" fill="#39d353" font-family="Segoe UI, Ubuntu, sans-serif" font-size="10" text-anchor="end">${nextMilestone.toLocaleString()}</text>
-  <text x="140" y="115" fill="#c9d1d9" font-family="Segoe UI, Ubuntu, sans-serif" font-size="10" text-anchor="middle">${Math.round(progress)}% to next</text>
+  <text x="25" y="119" fill="#9ca3af" font-family="Segoe UI, Ubuntu, sans-serif" font-size="10">${prevMilestone.toLocaleString()}</text>
+  <text x="255" y="119" fill="#22e55f" font-family="Segoe UI, Ubuntu, sans-serif" font-size="10" text-anchor="end">${nextMilestone.toLocaleString()}</text>
+  <text x="140" y="119" fill="#d1d5db" font-family="Segoe UI, Ubuntu, sans-serif" font-size="10" text-anchor="middle">${Math.round(progress)}% to next</text>
 </svg>`;
 
     res.setHeader('Content-Type', 'image/svg+xml');
@@ -67,8 +59,8 @@ module.exports = async (req, res) => {
   } catch (error) {
     const svg = `
 <svg width="280" height="130" xmlns="http://www.w3.org/2000/svg">
-  <rect width="280" height="130" rx="10" fill="#0d1117" stroke="#238636" stroke-width="2"/>
-  <text x="140" y="70" fill="#c9d1d9" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" text-anchor="middle">Loading milestone...</text>
+  <rect width="280" height="130" rx="10" fill="#000000" stroke="#00d84a" stroke-width="1.5"/>
+  <text x="140" y="70" fill="#e5e7eb" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" text-anchor="middle">Loading milestone...</text>
 </svg>`;
     res.setHeader('Content-Type', 'image/svg+xml');
     res.status(200).send(svg);
