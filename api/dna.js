@@ -31,8 +31,8 @@ module.exports = async (req, res) => {
     }
   }
 
-  // Color palette (green theme)
-  const colors = ['#238636', '#2ea043', '#3fb950', '#56d364', '#7ee787'];
+  // AMOLED green palette for consistent theme across cards.
+  const colors = ['#0b4f2a', '#0f703a', '#17a34a', '#22c55e', '#4ade80'];
   
   // Generate DNA helix strands
   let leftStrand = '';
@@ -57,18 +57,14 @@ module.exports = async (req, res) => {
     const clampedSize = Math.min(nodeSize, 10);
     
     // Left strand node
-    leftStrand += `<circle cx="${leftX}" cy="${y}" r="${clampedSize}" fill="${colors[colorIdx]}" opacity="0.9">
-      <animate attributeName="opacity" values="0.9;0.5;0.9" dur="${2 + (i % 3)}s" repeatCount="indefinite"/>
-    </circle>`;
+    leftStrand += `<circle cx="${leftX}" cy="${y}" r="${clampedSize}" fill="${colors[colorIdx]}" opacity="0.95"/>`;
     
     // Right strand node
-    rightStrand += `<circle cx="${rightX}" cy="${y}" r="${clampedSize}" fill="${colors[(colorIdx + 2) % colors.length]}" opacity="0.9">
-      <animate attributeName="opacity" values="0.5;0.9;0.5" dur="${2 + (i % 3)}s" repeatCount="indefinite"/>
-    </circle>`;
+    rightStrand += `<circle cx="${rightX}" cy="${y}" r="${clampedSize}" fill="${colors[(colorIdx + 2) % colors.length]}" opacity="0.95"/>`;
     
     // Bridge connecting strands
     if (i % 2 === 0) {
-      bridges += `<line x1="${leftX}" y1="${y}" x2="${rightX}" y2="${y}" stroke="${colors[colorIdx]}" stroke-width="2" opacity="0.4"/>`;
+      bridges += `<line x1="${leftX}" y1="${y}" x2="${rightX}" y2="${y}" stroke="${colors[colorIdx]}" stroke-width="2" opacity="0.45"/>`;
     }
   }
   
@@ -94,12 +90,12 @@ module.exports = async (req, res) => {
   const svg = `
 <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0d1117;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#161b22;stop-opacity:1" />
-    </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#04160b"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="1.6" result="coloredBlur"/>
       <feMerge>
         <feMergeNode in="coloredBlur"/>
         <feMergeNode in="SourceGraphic"/>
@@ -107,17 +103,17 @@ module.exports = async (req, res) => {
     </filter>
   </defs>
   
-  <rect width="${width}" height="${height}" rx="10" fill="url(#bgGrad)" stroke="#238636" stroke-width="2"/>
+  <rect width="${width}" height="${height}" rx="10" fill="url(#bgGrad)" stroke="#00d84a" stroke-width="1.5"/>
   
   <!-- Title -->
-  <text x="20" y="25" fill="#c9d1d9" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" font-weight="600">CODE DNA</text>
-  <text x="${width - 20}" y="25" fill="#8b949e" font-family="Segoe UI, Ubuntu, sans-serif" font-size="9" text-anchor="end">@${username}</text>
+  <text x="20" y="25" fill="#e5e7eb" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" font-weight="700">CODE DNA</text>
+  <text x="${width - 20}" y="25" fill="#9ca3af" font-family="Segoe UI, Ubuntu, sans-serif" font-size="9" text-anchor="end">@${username}</text>
   
   <!-- DNA Helix -->
   <g filter="url(#glow)" transform="translate(0, 10)">
     <!-- Strand paths -->
-    <path d="${leftPath}" fill="none" stroke="#238636" stroke-width="2" opacity="0.6"/>
-    <path d="${rightPath}" fill="none" stroke="#3fb950" stroke-width="2" opacity="0.6"/>
+    <path d="${leftPath}" fill="none" stroke="#16a34a" stroke-width="2" opacity="0.72"/>
+    <path d="${rightPath}" fill="none" stroke="#22c55e" stroke-width="2" opacity="0.72"/>
     
     <!-- Bridges -->
     ${bridges}
@@ -128,7 +124,7 @@ module.exports = async (req, res) => {
   </g>
   
   <!-- Subtitle -->
-  <text x="${width / 2}" y="${height - 10}" fill="#8b949e" font-family="Segoe UI, Ubuntu, sans-serif" font-size="9" text-anchor="middle">unique fingerprint</text>
+  <text x="${width / 2}" y="${height - 10}" fill="#9ca3af" font-family="Segoe UI, Ubuntu, sans-serif" font-size="9" text-anchor="middle">unique fingerprint</text>
 </svg>`;
 
   res.status(200).send(svg);
