@@ -17,6 +17,42 @@ function formatDate(dateString) {
   return `${month} ${day}, ${year}`;
 }
 
+function formatDateShort(dateString) {
+  if (!dateString) return '--';
+  const date = parseDate(dateString);
+  if (Number.isNaN(date.getTime())) return '--';
+  const month = MONTHS[date.getUTCMonth()];
+  const day = date.getUTCDate();
+  return `${month} ${day}`;
+}
+
+function formatDateWithOptionalYear(dateString, includeYear) {
+  return includeYear ? formatDate(dateString) : formatDateShort(dateString);
+}
+
+function formatRange(start, end, options = {}) {
+  const { shortCurrentYearRange = false } = options;
+  if (!start || !end) return '--';
+
+  const startDate = parseDate(start);
+  const endDate = parseDate(end);
+  if (Number.isNaN(startDate.getTime()) || Number.isNaN(endDate.getTime())) return '--';
+
+  const sameYear = startDate.getUTCFullYear() === endDate.getUTCFullYear();
+  const currentYear = new Date().getUTCFullYear();
+  const bothCurrentYear = startDate.getUTCFullYear() === currentYear && endDate.getUTCFullYear() === currentYear;
+
+  if (shortCurrentYearRange && bothCurrentYear) {
+    return `${formatDateShort(start)} - ${formatDateShort(end)}`;
+  }
+
+  if (sameYear) {
+    return `${formatDate(start)} - ${formatDateShort(end)}`;
+  }
+
+  return `${formatDateWithOptionalYear(start, true)} - ${formatDateWithOptionalYear(end, true)}`;
+}
+
 function addDays(date, days) {
   const result = new Date(date);
   result.setUTCDate(result.getUTCDate() + days);
@@ -116,11 +152,11 @@ function renderCard(username, stats, hideBorder) {
   const borderStroke = hideBorder ? 'transparent' : '#238636';
 
   const currentRange = stats.currentStreak > 0
-    ? `${formatDate(stats.currentStart)} - ${formatDate(stats.currentEnd)}`
+    ? formatRange(stats.currentStart, stats.currentEnd, { shortCurrentYearRange: true })
     : 'No active streak';
 
   const longestRange = stats.longestStreak > 0
-    ? `${formatDate(stats.longestStart)} - ${formatDate(stats.longestEnd)}`
+    ? formatRange(stats.longestStart, stats.longestEnd)
     : '--';
 
   const totalRange = stats.firstContributionDate
@@ -134,19 +170,20 @@ function renderCard(username, stats, hideBorder) {
   <line x1="166.67" y1="20" x2="166.67" y2="160" stroke="#30363d" stroke-width="1"/>
   <line x1="333.33" y1="20" x2="333.33" y2="160" stroke="#30363d" stroke-width="1"/>
 
-  <text x="83.33" y="78" fill="#9ae6b4" font-family="Segoe UI, Ubuntu, sans-serif" font-size="48" font-weight="700" text-anchor="middle">${stats.total.toLocaleString()}</text>
-  <text x="83.33" y="118" fill="#c9d1d9" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Total Contributions</text>
-  <text x="83.33" y="146" fill="#39d353" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">${totalRange}</text>
+  <text x="83.33" y="82" fill="#9ae6b4" font-family="Segoe UI, Ubuntu, sans-serif" font-size="41" font-weight="700" text-anchor="middle">${stats.total.toLocaleString()}</text>
+  <text x="83.33" y="116" fill="#c9d1d9" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" font-weight="500" text-anchor="middle">Total Contributions</text>
+  <text x="83.33" y="144" fill="#9be9a8" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" font-weight="500" text-anchor="middle">${totalRange}</text>
 
-  <circle cx="250" cy="66" r="40" fill="none" stroke="#39d353" stroke-width="6"/>
-  <path d="M250 15 C245 22, 244 26, 246 30 C248 34, 253 36, 257 33 C261 30, 262 24, 259 20 C257 17, 254 16, 250 15 Z" fill="#39d353"/>
-  <text x="250" y="78" fill="#b7f7c8" font-family="Segoe UI, Ubuntu, sans-serif" font-size="48" font-weight="700" text-anchor="middle">${stats.currentStreak}</text>
-  <text x="250" y="140" fill="#c9d1d9" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Current Streak</text>
-  <text x="250" y="166" fill="#39d353" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">${currentRange}</text>
+  <circle cx="250" cy="64" r="40" fill="none" stroke="#39d353" stroke-width="4"/>
+  <path d="M250 16 C246.5 20.8 246.3 25.2 250.2 28.8 C254.5 25.7 255 20.8 251.4 16.3" fill="none" stroke="#39d353" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M250.2 20.5 C248.8 22.5 248.8 24.5 250.4 26" fill="none" stroke="#39d353" stroke-width="2" stroke-linecap="round"/>
+  <text x="250" y="82" fill="#9ae6b4" font-family="Segoe UI, Ubuntu, sans-serif" font-size="41" font-weight="700" text-anchor="middle">${stats.currentStreak}</text>
+  <text x="250" y="132" fill="#c9d1d9" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Current Streak</text>
+  <text x="250" y="156" fill="#9be9a8" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" font-weight="500" text-anchor="middle">${currentRange}</text>
 
-  <text x="416.67" y="78" fill="#9ae6b4" font-family="Segoe UI, Ubuntu, sans-serif" font-size="48" font-weight="700" text-anchor="middle">${stats.longestStreak.toLocaleString()}</text>
-  <text x="416.67" y="118" fill="#c9d1d9" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Longest Streak</text>
-  <text x="416.67" y="146" fill="#39d353" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">${longestRange}</text>
+  <text x="416.67" y="82" fill="#9ae6b4" font-family="Segoe UI, Ubuntu, sans-serif" font-size="41" font-weight="700" text-anchor="middle">${stats.longestStreak.toLocaleString()}</text>
+  <text x="416.67" y="116" fill="#c9d1d9" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" font-weight="500" text-anchor="middle">Longest Streak</text>
+  <text x="416.67" y="144" fill="#9be9a8" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" font-weight="500" text-anchor="middle">${longestRange}</text>
 </svg>`;
 }
 
