@@ -23,11 +23,11 @@ module.exports = async (req, res) => {
         const count = contrib ? contrib.count : 0;
         
         // Color intensity based on count
-        let color = '#03170b'; // empty
-        if (count > 0 && count <= 3) color = '#0b4f2a';
-        else if (count > 3 && count <= 6) color = '#0f703a';
-        else if (count > 6 && count <= 9) color = '#17a34a';
-        else if (count > 9) color = '#22e55f';
+        let color = '#161b22'; // empty
+        if (count > 0 && count <= 3) color = '#0e4429';
+        else if (count > 3 && count <= 6) color = '#006d32';
+        else if (count > 6 && count <= 9) color = '#26a641';
+        else if (count > 9) color = '#39d353';
         
         const x = 30 + week * (cellSize + gap);
         const y = 35 + day * (cellSize + gap);
@@ -41,25 +41,25 @@ module.exports = async (req, res) => {
     
     const svg = `
 <svg width="220" height="150" xmlns="http://www.w3.org/2000/svg">
-  <rect width="220" height="150" rx="10" fill="#000000" stroke="#00d84a" stroke-width="1.5"/>
+  <rect width="220" height="150" rx="10" fill="#0d1117" stroke="#238636" stroke-width="2"/>
   
   <!-- Title -->
-  <text x="110" y="22" fill="#e5e7eb" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Last 12 Weeks</text>
+  <text x="110" y="22" fill="#c9d1d9" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">Last 12 Weeks</text>
   
   <!-- Heatmap grid -->
   ${cells}
   
   <!-- Legend -->
-  <text x="30" y="140" fill="#9ca3af" font-family="Segoe UI, Ubuntu, sans-serif" font-size="10">Less</text>
-  <rect x="55" y="132" width="10" height="10" rx="2" fill="#03170b"/>
-  <rect x="68" y="132" width="10" height="10" rx="2" fill="#0b4f2a"/>
-  <rect x="81" y="132" width="10" height="10" rx="2" fill="#0f703a"/>
-  <rect x="94" y="132" width="10" height="10" rx="2" fill="#17a34a"/>
-  <rect x="107" y="132" width="10" height="10" rx="2" fill="#22e55f"/>
-  <text x="122" y="140" fill="#9ca3af" font-family="Segoe UI, Ubuntu, sans-serif" font-size="10">More</text>
+  <text x="30" y="140" fill="#8b949e" font-family="Segoe UI, Ubuntu, sans-serif" font-size="10">Less</text>
+  <rect x="55" y="132" width="10" height="10" rx="2" fill="#161b22"/>
+  <rect x="68" y="132" width="10" height="10" rx="2" fill="#0e4429"/>
+  <rect x="81" y="132" width="10" height="10" rx="2" fill="#006d32"/>
+  <rect x="94" y="132" width="10" height="10" rx="2" fill="#26a641"/>
+  <rect x="107" y="132" width="10" height="10" rx="2" fill="#39d353"/>
+  <text x="122" y="140" fill="#8b949e" font-family="Segoe UI, Ubuntu, sans-serif" font-size="10">More</text>
   
   <!-- Total -->
-  <text x="190" y="140" fill="#22e55f" font-family="Segoe UI, Ubuntu, sans-serif" font-size="10" font-weight="700" text-anchor="end">${totalContribs}</text>
+  <text x="190" y="140" fill="#238636" font-family="Segoe UI, Ubuntu, sans-serif" font-size="10" font-weight="bold" text-anchor="end">${totalContribs}</text>
 </svg>`;
 
     res.setHeader('Content-Type', 'image/svg+xml');
@@ -68,8 +68,8 @@ module.exports = async (req, res) => {
   } catch (error) {
     const svg = `
 <svg width="220" height="150" xmlns="http://www.w3.org/2000/svg">
-  <rect width="220" height="150" rx="10" fill="#000000" stroke="#00d84a" stroke-width="1.5"/>
-  <text x="110" y="80" fill="#e5e7eb" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" text-anchor="middle">Loading heatmap...</text>
+  <rect width="220" height="150" rx="10" fill="#0d1117" stroke="#238636" stroke-width="2"/>
+  <text x="110" y="80" fill="#c9d1d9" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" text-anchor="middle">Loading heatmap...</text>
 </svg>`;
     res.setHeader('Content-Type', 'image/svg+xml');
     res.status(200).send(svg);
