@@ -113,7 +113,7 @@ function buildStats(contributions) {
 }
 
 function renderCard(username, stats, hideBorder) {
-  const borderStroke = hideBorder ? 'transparent' : '#1f6f3a';
+  const borderStroke = hideBorder ? 'transparent' : '#238636';
 
   const currentRange = stats.currentStreak > 0
     ? `${formatDate(stats.currentStart)} - ${formatDate(stats.currentEnd)}`
@@ -128,35 +128,25 @@ function renderCard(username, stats, hideBorder) {
     : '--';
 
   return `
-<svg width="500" height="195" viewBox="0 0 500 195" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GitHub streak stats for ${username}">
-  <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0a1220"/>
-      <stop offset="100%" stop-color="#0d1117"/>
-    </linearGradient>
-    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#39d353" flood-opacity="0.15"/>
-    </filter>
-  </defs>
+<svg width="500" height="180" viewBox="0 0 500 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GitHub streak stats for ${username}">
+  <rect width="500" height="180" rx="10" fill="#0d1117" stroke="${borderStroke}" stroke-width="2"/>
 
-  <rect x="0.5" y="0.5" width="499" height="194" rx="9" fill="url(#bg)" stroke="${borderStroke}"/>
+  <line x1="166.67" y1="20" x2="166.67" y2="160" stroke="#30363d" stroke-width="1"/>
+  <line x1="333.33" y1="20" x2="333.33" y2="160" stroke="#30363d" stroke-width="1"/>
 
-  <line x1="166.67" y1="24" x2="166.67" y2="171" stroke="#263242" stroke-width="1"/>
-  <line x1="333.33" y1="24" x2="333.33" y2="171" stroke="#263242" stroke-width="1"/>
+  <text x="83.33" y="78" fill="#9ae6b4" font-family="Segoe UI, Ubuntu, sans-serif" font-size="48" font-weight="700" text-anchor="middle">${stats.total.toLocaleString()}</text>
+  <text x="83.33" y="118" fill="#c9d1d9" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Total Contributions</text>
+  <text x="83.33" y="146" fill="#39d353" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">${totalRange}</text>
 
-  <text x="83.33" y="80" fill="#9bdcb0" font-family="Segoe UI, Ubuntu, sans-serif" font-size="42" font-weight="700" text-anchor="middle">${stats.total.toLocaleString()}</text>
-  <text x="83.33" y="116" fill="#c9d1d9" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Total Contributions</text>
-  <text x="83.33" y="147" fill="#39d353" font-family="Segoe UI, Ubuntu, sans-serif" font-size="10" text-anchor="middle">${totalRange}</text>
+  <circle cx="250" cy="66" r="40" fill="none" stroke="#39d353" stroke-width="6"/>
+  <path d="M250 15 C245 22, 244 26, 246 30 C248 34, 253 36, 257 33 C261 30, 262 24, 259 20 C257 17, 254 16, 250 15 Z" fill="#39d353"/>
+  <text x="250" y="78" fill="#b7f7c8" font-family="Segoe UI, Ubuntu, sans-serif" font-size="48" font-weight="700" text-anchor="middle">${stats.currentStreak}</text>
+  <text x="250" y="140" fill="#c9d1d9" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Current Streak</text>
+  <text x="250" y="166" fill="#39d353" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">${currentRange}</text>
 
-  <circle cx="250" cy="69" r="40" fill="none" stroke="#39d353" stroke-width="6" filter="url(#softShadow)"/>
-  <path d="M250 17 C245 24, 244 28, 246 33 C248 37, 253 39, 257 36 C261 33, 262 27, 259 23 C257 20, 254 18, 250 17 Z" fill="#39d353"/>
-  <text x="250" y="80" fill="#b6f2c5" font-family="Segoe UI, Ubuntu, sans-serif" font-size="44" font-weight="700" text-anchor="middle">${stats.currentStreak}</text>
-  <text x="250" y="140" fill="#c9d1d9" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Current Streak</text>
-  <text x="250" y="167" fill="#39d353" font-family="Segoe UI, Ubuntu, sans-serif" font-size="10" text-anchor="middle">${currentRange}</text>
-
-  <text x="416.67" y="80" fill="#9bdcb0" font-family="Segoe UI, Ubuntu, sans-serif" font-size="42" font-weight="700" text-anchor="middle">${stats.longestStreak.toLocaleString()}</text>
-  <text x="416.67" y="116" fill="#c9d1d9" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Longest Streak</text>
-  <text x="416.67" y="147" fill="#39d353" font-family="Segoe UI, Ubuntu, sans-serif" font-size="10" text-anchor="middle">${longestRange}</text>
+  <text x="416.67" y="78" fill="#9ae6b4" font-family="Segoe UI, Ubuntu, sans-serif" font-size="48" font-weight="700" text-anchor="middle">${stats.longestStreak.toLocaleString()}</text>
+  <text x="416.67" y="118" fill="#c9d1d9" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Longest Streak</text>
+  <text x="416.67" y="146" fill="#39d353" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="middle">${longestRange}</text>
 </svg>`;
 }
 
@@ -180,9 +170,9 @@ module.exports = async (req, res) => {
     res.status(200).send(svg);
   } catch (error) {
     const fallback = `
-<svg width="500" height="195" viewBox="0 0 500 195" xmlns="http://www.w3.org/2000/svg">
-  <rect x="0.5" y="0.5" width="499" height="194" rx="9" fill="#0d1117" stroke="#1f6f3a"/>
-  <text x="250" y="95" fill="#c9d1d9" font-family="Segoe UI, Ubuntu, sans-serif" font-size="18" text-anchor="middle">Loading streak stats...</text>
+<svg width="500" height="180" viewBox="0 0 500 180" xmlns="http://www.w3.org/2000/svg">
+  <rect width="500" height="180" rx="10" fill="#0d1117" stroke="#238636" stroke-width="2"/>
+  <text x="250" y="94" fill="#c9d1d9" font-family="Segoe UI, Ubuntu, sans-serif" font-size="16" text-anchor="middle">Loading streak stats...</text>
 </svg>`;
 
     res.setHeader('Content-Type', 'image/svg+xml');
