@@ -2,7 +2,7 @@
 <h3 align="center">sometimes, i dont code</h3><br>
 
 <p align="center">
-  <img src="https://profile-readme-kappa.vercel.app/api/views?username=rohtheroos-84" alt="Profile Views"/>
+  <img src="https://profile-readme-kappa.vercel.app/api/views?username=rohtheroos-84&base=406" alt="Profile Views"/>
 </p>
 
 currently working on [**em-connect**](https://github.com/rohtheroos-84/EM-Connect), check it out [**here**](https://tryemconnect.netlify.app)
@@ -15,9 +15,9 @@ wanna hire me? -> check out my [**resume**](https://drive.google.com/file/d/1WMW
 
 <h3 align="left">i'm on:</h3>
 <p align="left">
-<a href="https://linkedin.com/in/rohitnagendran84" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="rohitnagendran84" height="30" width="40" /></a>
-<a href="https://www.codechef.com/users/rohbiahh_84" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.1.0/icons/codechef.svg" alt="rohbiahh_84" height="30" width="40" /></a>
-<a href="https://www.leetcode.com/rohhcodes84" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/leet-code.svg" alt="rohhcodes84" height="30" width="40" /></a>
+  <a href="https://linkedin.com/in/rohitnagendran84" target="_blank" rel="noreferrer"><img src="https://cdn.simpleicons.org/linkedin/0A66C2" alt="LinkedIn" width="32" height="32"/></a>&nbsp;
+  <a href="https://www.codechef.com/users/rohbiahh_84" target="_blank" rel="noreferrer"><img src="https://cdn.simpleicons.org/codechef/22e55f" alt="CodeChef" width="32" height="32"/></a>&nbsp;
+  <a href="https://www.leetcode.com/rohhcodes84" target="_blank" rel="noreferrer"><img src="https://cdn.simpleicons.org/leetcode/FFA116" alt="LeetCode" width="32" height="32"/></a>
 </p>
 
 <br>

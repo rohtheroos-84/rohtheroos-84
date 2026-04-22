@@ -3,6 +3,10 @@ const fetch = require('node-fetch');
 // Using counterapi.dev - free, reliable, counts every hit
 module.exports = async (req, res) => {
   const { username = 'rohtheroos-84' } = req.query;
+  const rawBase = req.query.base ?? req.query.offset;
+  const baseParam = rawBase === undefined ? NaN : Number.parseInt(rawBase, 10);
+  const defaultBase = username === 'rohtheroos-84' ? 406 : 0;
+  const baseViews = Number.isFinite(baseParam) ? Math.max(baseParam, 0) : defaultBase;
   const namespace = 'github-profile-views';
   
   // Set headers to prevent GitHub camo caching
@@ -12,6 +16,7 @@ module.exports = async (req, res) => {
   res.setHeader('Expires', '0');
   
   let views = 0;
+  let counterApiCount = 0;
   
   try {
     // Increment and get count from counterapi.dev
@@ -24,15 +29,32 @@ module.exports = async (req, res) => {
     clearTimeout(timeout);
     
     const countData = await countRes.json();
-    views = countData.count || 0;
+    counterApiCount = Number.parseInt(countData.count, 10) || 0;
   } catch (error) {
     // If API fails, try to get current count without incrementing
     try {
       const countRes = await fetch(`https://api.counterapi.dev/v1/${namespace}/${username}`);
       const countData = await countRes.json();
-      views = countData.count || 0;
+      counterApiCount = Number.parseInt(countData.count, 10) || 0;
     } catch (e) {
-      views = 0;
+      counterApiCount = 0;
+    }
+  }
+
+  if (counterApiCount > 0) {
+    views = counterApiCount;
+  } else {
+    // Fallback provider when counterapi is unavailable.
+    try {
+      const fallbackPath = encodeURIComponent(`profile-readme-kappa-${username}`);
+      const fallbackRes = await fetch(`https://api.visitorbadge.io/api/visitors?path=${fallbackPath}`);
+      const fallbackSvg = await fallbackRes.text();
+      const match = fallbackSvg.match(/VISITORS:\s*([0-9,]+)/i);
+      const fallbackCount = match ? Number.parseInt(match[1].replace(/,/g, ''), 10) : 0;
+      views = Math.max(baseViews + (fallbackCount || 0), baseViews);
+    } catch (fallbackError) {
+      // Keep a stable non-zero floor if every provider fails.
+      views = baseViews;
     }
   }
 
