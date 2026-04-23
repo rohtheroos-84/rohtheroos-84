@@ -22,7 +22,7 @@ wanna hire me? -> check out my [**resume**](https://drive.google.com/file/d/1WMW
   </tr>
 </table> -->
 
-<br>
+<!-- <br> -->
 
 <h3 align="left">skillz:</h3>
 
