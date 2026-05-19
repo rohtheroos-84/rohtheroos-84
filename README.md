@@ -90,7 +90,6 @@ wanna hire me? -> check out my [**resume**](https://drive.google.com/file/d/1WMW
 <br>
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=rohtheroos-84&theme=shadow-green" alt="Streak Stats"/><br/><br/>
   <img src="https://profile-readme-kappa.vercel.app/api/heatmap?username=rohtheroos-84" alt="Commits Heatmap"/>
   <img src="https://profile-readme-kappa.vercel.app/api/milestone?username=rohtheroos-84" alt="Contribution Milestone"/>
   <p align="center">
