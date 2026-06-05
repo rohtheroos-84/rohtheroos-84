@@ -7,7 +7,7 @@
 
 currently working on [**em-connect**](https://github.com/rohtheroos-84/EM-Connect), check it out [**here**](https://tryemconnect.netlify.app)
 
-reach me at **rohit84.official@gmail.com**
+u can reach me at **rohit84.official@gmail.com**
 
 wanna hire me? -> check out my [**resume**](https://drive.google.com/file/d/1WMW9QPfJks4cCtbJR036PHCHDh3Ss0Rt/view?usp=sharing)
 
