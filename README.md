@@ -5,7 +5,7 @@
   <img src="https://profile-readme-kappa.vercel.app/api/views?username=rohtheroos-84&base=406" alt="Profile Views"/>
 </p>
 
-currently working on [**em-connect**](https://github.com/rohtheroos-84/EM-Connect), check it out [**here**](https://tryemconnect.netlify.app)
+check out [**em-connect**](https://github.com/rohtheroos-84/EM-Connect), [**here**](https://tryemconnect.netlify.app)
 
 u can reach me at **rohit84.official@gmail.com**
 
