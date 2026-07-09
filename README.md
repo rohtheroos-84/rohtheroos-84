@@ -5,11 +5,11 @@
   <img src="https://profile-readme-kappa.vercel.app/api/views?username=rohtheroos-84&base=406" alt="Profile Views"/>
 </p>
 
-check out [**em-connect**](https://github.com/rohtheroos-84/EM-Connect), [**here**](https://tryemconnect.netlify.app)
+check out [**my portfolio**](https://rohtheroos.xyz)
 
 u can reach me at **rohit84.official@gmail.com**
 
-wanna hire me? -> check out my [**resume**](https://drive.google.com/file/d/1WMW9QPfJks4cCtbJR036PHCHDh3Ss0Rt/view?usp=sharing)
+hiring? -> check out my [**resume**](https://drive.google.com/file/d/1WMW9QPfJks4cCtbJR036PHCHDh3Ss0Rt/view?usp=sharing)
 
 <!-- <br> -->
 <!-- 
