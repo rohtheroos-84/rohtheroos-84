@@ -9,7 +9,7 @@ check out [**my portfolio**](https://rohtheroos.xyz)
 
 u can reach me at **rohit84.official@gmail.com**
 
-hiring? -> check out my [**resume**](https://drive.google.com/file/d/1WMW9QPfJks4cCtbJR036PHCHDh3Ss0Rt/view?usp=sharing)
+hiring? -> check out my [**resume**](https://drive.google.com/file/d/17h395c0vdTEll_CzelnPC8b2wtsIVdVL/view?usp=sharing)
 
 <!-- <br> -->
 <!-- 
