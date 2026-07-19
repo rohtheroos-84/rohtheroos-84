@@ -5,6 +5,8 @@
   <img src="https://profile-readme-kappa.vercel.app/api/views?username=rohtheroos-84&base=406" alt="Profile Views"/>
 </p>
 
+currently building [**F1 Info**](https://f1info.online)
+
 check out [**my portfolio**](https://rohtheroos.xyz)
 
 u can reach me at **rohit84.official@gmail.com**
