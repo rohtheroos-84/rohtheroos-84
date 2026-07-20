@@ -5,7 +5,7 @@
   <img src="https://profile-readme-kappa.vercel.app/api/views?username=rohtheroos-84&base=406" alt="Profile Views"/>
 </p>
 
-currently building [**F1 Info**](https://f1info.online)
+currently building [**F1 Info**](https://github.com/rohtheroos-84/f1info), check it out [**here**](https://f1info.online)
 
 check out [**my portfolio**](https://rohtheroos.xyz)
 
