@@ -9,7 +9,7 @@ currently building [**f1 info**](https://f1info.online), a f1 stats query engine
 
 check out [**my portfolio**](https://rohtheroos.xyz)
 
-u can reach me at **rohit84.official@gmail.com**
+reach me at **rohit84.official@gmail.com**
 
 hiring? -> check out my [**resume**](https://drive.google.com/file/d/17h395c0vdTEll_CzelnPC8b2wtsIVdVL/view?usp=sharing)
 
