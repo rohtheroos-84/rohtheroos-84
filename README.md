@@ -11,7 +11,7 @@ check out [**my portfolio**](https://rohtheroos.xyz)
 
 reach me at **rohit84.official@gmail.com**
 
-hiring? -> check out my [**resume**](https://drive.google.com/file/d/17h395c0vdTEll_CzelnPC8b2wtsIVdVL/view?usp=sharing)
+hiring? -> check out my [**resume**](https://drive.google.com/file/d/17h395c0vdTEll_CzelnPC8b2wtsIVdVL/view?usp=sharing) :)
 
 <!-- <br> -->
 <!-- 
