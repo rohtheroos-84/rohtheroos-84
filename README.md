@@ -7,7 +7,7 @@
 
 currently building [**f1 info**](https://f1info.online), a f1 stats query system that aims to convert unusual questions into visual stories!
 
-check out [**my portfolio**](https://rohtheroos.xyz)
+check out [**my website**](https://rohtheroos.xyz)
 
 reach me at **rohit84.official@gmail.com**
 
