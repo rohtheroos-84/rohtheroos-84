@@ -5,7 +5,7 @@
   <img src="https://profile-readme-kappa.vercel.app/api/views?username=rohtheroos-84&base=406" alt="Profile Views"/>
 </p>
 
-currently building [**f1 info**](https://f1info.online), a f1 stats query system that aims to convert unusual questions into visual stories!
+currently building [**f1 info**](https://f1info.online), a query system for f1 stats that aims to convert unusual questions into visual stories!
 
 check out [**my website**](https://rohtheroos.xyz)
 
