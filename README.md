@@ -1,5 +1,5 @@
 <h1 align="center">me, rohit</h1>
-<h3 align="center">sometimes, i dont code</h3><br>
+<h3 align="center">sometimes, i code</h3><br>
 
 <p align="center">
   <img src="https://profile-readme-kappa.vercel.app/api/views?username=rohtheroos-84&base=406" alt="Profile Views"/>
